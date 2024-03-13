@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore
+namespace ClassLesson
 {
     public class Point
     {
@@ -22,7 +22,14 @@ namespace BookStore
             this.x = other.x;
             this.y = other.y;
         }
-
+        public bool IsEqual(Point other) 
+        {
+            if(this.x == other.x && this.y == other.y) 
+            {
+                return true;
+            }
+            return false;
+        }
         public double GetX() 
         {
             return x; 

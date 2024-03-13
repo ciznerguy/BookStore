@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore
+namespace ClassLesson
 {
     internal class Program
     {
@@ -30,6 +30,36 @@ namespace BookStore
                 p2.Distance(p1) == p3.Distance(p1);
             return isTriangle;
 
+        }
+        //פעולה המקבלת מערך של נקודות שתי קורדינאטות
+        //הפעולה תחזיר אמת אם הנקודה קיימת במערך אחרת יוחזר שקר
+        //בסוף הפעולה לא יהיה שינוי במערך 
+        public static bool IsInArr(Point[] arrPoint, double x, double y) 
+        {
+            Point pointToCheck = new Point(x, y);
+            for(int i = 0; i < arrPoint.Length; i++) 
+            {
+                if (arrPoint[i].IsEqual(pointToCheck)) 
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //פעולה המקבלת מערך של נקודות ונקודה נוספת 
+        //הפעולה תחזיר אמת אם הנקודה קיימת במערך
+        //בסוף הפעולה המערך ללא שינוי
+        public static bool IsPointInArray(Point[] arr, Point p1)
+        {
+            for(int i = 0; i < arr.Length; i++) 
+            {
+                if (arr[i].GetX() == p1.GetX() && arr[i].GetY() == p1.GetY()) 
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         static void Main(string[] args)
         {
@@ -109,28 +139,37 @@ namespace BookStore
             Console.WriteLine(c1);
             Console.WriteLine(c2);
             Console.WriteLine(c3);*/
-
-            Point p1 = new Point(0, 0);
-            Point p2 = new Point(3, 4);
-            Console.WriteLine(p1);
-            
-            
+            /*
+                        Point p1 = new Point(0, 0);
+                        Point p2 = new Point(3, 4);
+                        Console.WriteLine(p1);
 
 
-            double distance = p1.Distance(p2 );
-            Console.WriteLine(distance);
 
-            Point p3 = p1.MidPoint(p2);
-            Console.WriteLine(p3);
 
-            Point p4 = p1;
-            Console.WriteLine(p4);
+                        double distance = p1.Distance(p2 );
+                        Console.WriteLine(distance);
 
-            double newX = p1.GetX() + 1;
-            double newY = p1.GetY() + 10;
-            p1.SetX(newX);
-            p1.SetY(newY);
-            Console.WriteLine(p1);
+                        Point p3 = p1.MidPoint(p2);
+                        Console.WriteLine(p3);
+
+                        Point p4 = p1;
+                        Console.WriteLine(p4);
+
+                        double newX = p1.GetX() + 1;
+                        double newY = p1.GetY() + 10;
+                        p1.SetX(newX);
+                        p1.SetY(newY);
+                        Console.WriteLine(p1);*/
+            int[] arr = new int[10];
+            arr[8] = 100;
+            Point[] arrPoint = new Point[10];
+            arrPoint[0] = new Point(0, 0);
+            double num = arrPoint[0].GetX();
+            arrPoint[1] = new Point(3, 4);
+            double distance = arrPoint[0].Distance(arrPoint[1]);
+            Console.WriteLine( distance);
+
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore
+namespace ClassLesson
 {
     public class Date
     {
@@ -31,24 +31,6 @@ namespace BookStore
         public void SetMonth(int month) {  this.month = month;}
         public void SetYear(int year) {  this.year = year;}
 
-        public bool IsLater(Date other) 
-        {
-            if (this.year < other.year)
-            {
-                return true;
-            }
-            else if (this.year == other.year && this.month < other.month))
-            {
-                return true;
-            }
-
-            else if (this.month == other.month&& this.day < other.day))
-            { 
-                return true; 
-            }
-            
-            return false;
-        }
         
 
         public override string ToString()
