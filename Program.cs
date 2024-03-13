@@ -23,7 +23,14 @@ namespace BookStore
             double distance2 = p2.Distance(p3);
             return distance1 + distance2;
         }
+        //יש לכתוב פעולה המקבלת שלוש נקודות ומחזירה אמת אם הם יוצרות משולש שווה שוקיים
+        public static bool IsTriangleShave(Point p1,Point p2, Point p3) 
+        {
+            bool isTriangle = p1.Distance(p2) == p3.Distance(p2) &&
+                p2.Distance(p1) == p3.Distance(p1);
+            return isTriangle;
 
+        }
         static void Main(string[] args)
         {
 
